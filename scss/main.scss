@@ -1,0 +1,139 @@
+@import "./colors";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: $third;
+}
+main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+// nav bar
+nav{
+    background-color: $eleven;
+    box-shadow: 0px 5px 15px $nine;
+    letter-spacing: .1rem;
+}
+    .nav-header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $seven;
+        padding: 1rem;
+        h1{
+            display: block;
+            line-height: 1.5rem;
+            font-size: 3rem;
+            text-align: center;
+            .little-title{
+                font-size: 1rem;
+                letter-spacing: 0;
+                vertical-align: text-top;
+            }
+            .paris{
+                font-size: 1rem;
+                font-weight: normal;
+            }
+        }
+    }
+    
+    .nav-toggle{
+        background: transparent;
+        border: 3px solid $seven-b;
+        border-radius: .3rem;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+        .hamburger{
+            transition: translate 1s, rotate 1s;
+        }
+        .line{
+            stroke-dasharray: 60 31 60 400;
+            transition: 1s;
+        }
+        &[aria-expanded = "true"] {
+            .line{
+                stroke-dasharray: 60 105 60 400;
+                stroke-dashoffset: -90;
+            }
+            .hamburger{
+                translate: 2px -2px;
+                rotate: .125turn;
+            }
+        } 
+        
+    }
+    
+    .logo{
+        height: 4rem;
+    }
+    .links a {
+        color: $seven-b;
+        font-size: 1rem;
+        font-variant: small-caps;
+        display: block;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s linear;
+        &:hover{
+            color: $second;
+            background: lighten($first-one, 2%);
+            padding-left: 1.5rem;
+        }
+    }
+    .links {
+        height: 0;
+        overflow: hidden;
+        transition: all 0.3s linear;
+    }
+    .show-links{
+        height: 8.5rem;
+    }
+
+// footer
+footer{
+    background-color: #333;
+    margin-top: auto;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: .2rem;
+    font-size: 1.5rem;
+
+    li{
+        background-color: white;
+        width: 45px;
+        height: 45px;
+        border-radius: .8rem;
+        display: grid;
+        &:hover{
+            background-color: $eight;
+            }
+        }
+        a {
+            display: grid;
+            place-items: center;
+            color: $eight;
+            &:hover{
+                color: darken($eight, 30%);
+        }
+    }
+}
+
+
+@import "./media";

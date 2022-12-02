@@ -1,0 +1,13 @@
+{
+  "name": "littleyak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "sass --watch ./scss/main.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css"
+    
+  },
+  "author": "",
+  "license": "ISC"
+}
