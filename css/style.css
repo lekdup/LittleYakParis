@@ -11,6 +11,10 @@ body {
 
 main {
   min-height: 100vh;
+  background-image: url("https://source.unsplash.com/JqT2Wp5S0Dk");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 40%;
   display: flex;
   flex-direction: column;
 }
@@ -101,12 +105,17 @@ nav {
 }
 
 .show-links {
-  height: 8.5rem;
+  height: 9rem;
 }
 
 footer {
-  background-color: #333;
+  background-color: rgba(51, 51, 51, 0.6);
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .social-icons {
