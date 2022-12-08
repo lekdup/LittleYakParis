@@ -1,4 +1,9 @@
 @media screen and (min-width: 800px){
+    nav {
+        margin-top: 1rem;
+        background-color: transparent;
+        box-shadow: none;
+    }
     .nav-center {
         max-width: 1170px;
         margin: 0 auto;
@@ -8,6 +13,7 @@
         padding: 1rem;
     }
     .nav-header{
+        color: $ten;
         padding: 0;
         width: 50%;
         display: flex;
@@ -19,17 +25,21 @@
     .nav-toggle {
         display: none;
     }
+    .links-container {
+        height: auto !important;
+    }
     .links {
-        height: auto;
         display: flex;
         li{
-            outline: 1px solid $fifth;
+            outline: 1px solid $nine;
         }
         a{
+            color: $ten;
             padding: 0;
             margin: 0 1rem;
             &:hover{
                 background: transparent;
+                color: darken($ten, 20%);
                 padding: 0;
             }
         }

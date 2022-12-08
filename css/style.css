@@ -86,10 +86,10 @@ nav {
 
 .links a {
   color: #210E0D;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-variant: small-caps;
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   transition: all 0.3s linear;
 }
 .links a:hover {
@@ -98,7 +98,7 @@ nav {
   padding-left: 1.5rem;
 }
 
-.links {
+.links-container {
   height: 0;
   overflow: hidden;
   transition: all 0.3s linear;
@@ -145,6 +145,11 @@ footer {
 }
 
 @media screen and (min-width: 800px) {
+  nav {
+    margin-top: 1rem;
+    background-color: transparent;
+    box-shadow: none;
+  }
   .nav-center {
     max-width: 1170px;
     margin: 0 auto;
@@ -154,6 +159,7 @@ footer {
     padding: 1rem;
   }
   .nav-header {
+    color: #FEE6CB;
     padding: 0;
     width: 50%;
     display: flex;
@@ -164,19 +170,23 @@ footer {
   .nav-toggle {
     display: none;
   }
+  .links-container {
+    height: auto !important;
+  }
   .links {
-    height: auto;
     display: flex;
   }
   .links li {
-    outline: 1px solid #312D2E;
+    outline: 1px solid #896C5E;
   }
   .links a {
+    color: #FEE6CB;
     padding: 0;
     margin: 0 1rem;
   }
   .links a:hover {
     background: transparent;
+    color: #fcb667;
     padding: 0;
   }
 }
