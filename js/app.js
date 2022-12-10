@@ -19,3 +19,23 @@ navButton.addEventListener('click', () =>{
     }
     // linksContainer.classList.toggle("show-links")
 })
+
+// fixed Navbar
+const navbar = document.getElementById('nav')
+const topLink = document.querySelector('.top-link')
+
+window.addEventListener('scroll', ()=>{
+    const scrollHeight = window.pageYOffset;
+    const navHeight = navbar.getBoundingClientRect().height;
+    if (scrollHeight > navHeight){
+        navbar.classList.add('fixed-nav')
+    } else {
+        navbar.classList.remove('fixed-nav')
+    }
+
+    if (scrollHeight > 500){
+        topLink.classList.add('show-link')
+    } else {
+        topLink.classList.remove('show-link')
+    }
+});

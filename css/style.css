@@ -48,6 +48,11 @@ nav {
   padding: 0.5rem;
 }
 
+.fixed-nav {
+  position: fixed;
+  width: 100%;
+}
+
 .nav-toggle {
   background: transparent;
   border: 3px solid #210E0D;
@@ -96,10 +101,6 @@ nav {
   transition: all 0.3s linear;
 }
 
-.show-links {
-  height: 9rem;
-}
-
 .banner {
   height: 100vh;
   display: grid;
@@ -141,7 +142,7 @@ nav {
 .banner .btn-resa:hover {
   cursor: pointer;
   background-color: #FEE6CB;
-  color: #58382B;
+  color: #843B62;
 }
 
 .banner::after {
@@ -205,6 +206,36 @@ footer {
   color: black;
 }
 
+.top-link {
+  font-size: 1rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: #843B62;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.3rem;
+  color: #F9F6EE;
+  animation: pulse 1s ease-in-out infinite alternate;
+  visibility: hidden;
+  z-index: -100;
+}
+
+.show-link {
+  visibility: visible;
+  z-index: 100;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1.2);
+  }
+}
 @media screen and (min-width: 800px) {
   nav {
     background-color: transparent;
@@ -227,6 +258,12 @@ footer {
   .nav-header h2 {
     margin-left: 1rem;
   }
+  .fixed-nav {
+    background-color: #F9F6EE;
+  }
+  .fixed-nav .links a {
+    color: #1F0906;
+  }
   .nav-toggle {
     display: none;
   }
@@ -236,9 +273,6 @@ footer {
   .links {
     display: flex;
   }
-  .links li {
-    outline: 1px solid #896C5E;
-  }
   .links a {
     color: #FEE6CB;
     padding: 0;
@@ -246,7 +280,7 @@ footer {
   }
   .links a:hover {
     background: transparent;
-    color: #fcb667;
+    color: #843B62;
     padding: 0;
   }
 }
