@@ -1,5 +1,8 @@
 @import "./colors";
 
+html{
+    scroll-behavior: smooth;
+}
 * {
     margin: 0;
     padding: 0;
@@ -12,12 +15,8 @@ body{
 }
 main{
     min-height: 100vh;
-    background: url("https://source.unsplash.com/JqT2Wp5S0Dk") center/cover no-repeat;
-    background-position: 40%;
     display: flex;
     flex-direction: column;
-    position: relative;
-    isolation: isolate;
 }
 ul{
     list-style: none;
@@ -26,125 +25,150 @@ a{
     text-decoration: none;
 }
 
-// nav bar
+// nav bar #############################
+header{
+    background: url("https://source.unsplash.com/JqT2Wp5S0Dk") center/cover no-repeat;
+    background-position: 40%;
+    position: relative;
+    isolation: isolate;
+}
 nav{
     background-color: $eleven;
     box-shadow: 0px 5px 15px $nine;
     letter-spacing: .1rem;
 }
-    .nav-header{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        color: $seven;
-        padding: .5rem;
-    }
-    
-    .nav-toggle{
-        background: transparent;
-        border: 3px solid $seven-b;
-        border-radius: .3rem;
-        height: 40px;
-        width: 40px;
-        cursor: pointer;
-        .hamburger{
-            transition: translate 1s, rotate 1s;
-        }
-        .line{
-            stroke-dasharray: 60 31 60 400;
-            transition: 1s;
-        }
-        &[aria-expanded = "true"] {
-            .line{
-                stroke-dasharray: 60 105 60 400;
-                stroke-dashoffset: -90;
-            }
-            .hamburger{
-                translate: 2px -2px;
-                rotate: .125turn;
-            }
-        } 
-        
-    }
-    
-    .logo{
-        height: 3rem;
-    }
-    .links a {
-        color: $seven-b;
-        font-size: 1.1rem;
-        font-variant: small-caps;
-        display: block;
-        padding: 0.75rem 1rem;
-        transition: all 0.3s linear;
-        &:hover{
-            color: $eight;
-            background: lighten($ten, 2%);
-            padding-left: 1.5rem;
-        }
-    }
-    .links-container {
-        height: 0;
-        overflow: hidden;
-        transition: all 0.3s linear;
-    }
-    .show-links{
-        height: 9rem;
-    }
-    .banner {
-        height: 100vh;
-        display: grid;
-        place-items: center;
-        text-align: center;
-        color: $ten;
-        padding: 0 .5rem;
-        .container {
-            h1{
-                font-size: 5rem;
-                display: block;
-                line-height: 2.5rem;
-                .little-title{
-                    font-size: 2rem;
-                    letter-spacing: 0;
-                    vertical-align: text-top;
-                }
-                .paris{
-                    font-size: 1.2rem;
-                    font-weight: lighter;
-                    padding: 1rem 0;
-                }
-            }
-            p{
-                max-width: 40rem;
-                margin: 0 auto;
-                margin-bottom: 1.25rem;
-                line-height: 1.3rem;
-            }
-        }
-        .btn-resa {
-            letter-spacing: .3rem;
-            color: $ten;
-            border: 2px solid $ten;
-            background-color: transparent;
-            padding: .7rem 1.3rem;
-            display: inline-block;
-            transition: all 0.3s linear;
-            &:hover {
-                cursor: pointer;
-                background-color: $ten;
-                color: $eight;
-            }
-        }
-    }
-    .banner::after{
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: -1;
-    }
+.nav-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $seven;
+    padding: .5rem;
+}
 
-// footer
+.nav-toggle{
+    background: transparent;
+    border: 3px solid $seven-b;
+    border-radius: .3rem;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    .hamburger{
+        transition: translate 1s, rotate 1s;
+    }
+    .line{
+        stroke-dasharray: 60 31 60 400;
+        transition: 1s;
+    }
+    &[aria-expanded = "true"] {
+        .line{
+            stroke-dasharray: 60 105 60 400;
+            stroke-dashoffset: -90;
+        }
+        .hamburger{
+            translate: 2px -2px;
+            rotate: .125turn;
+        }
+    } 
+    
+}
+
+.logo{
+    height: 3rem;
+}
+.links a {
+    color: $seven-b;
+    font-size: 1.1rem;
+    font-variant: small-caps;
+    display: block;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s linear;
+    &:hover{
+        color: $eight;
+        background: lighten($ten, 2%);
+        padding-left: 1.5rem;
+    }
+}
+.links-container {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s linear;
+}
+.show-links{
+    height: 9rem;
+}
+
+// banner ##########################
+
+.banner {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: $ten;
+    padding: 0 .5rem;
+    .container {
+        h1{
+            font-size: 5rem;
+            display: block;
+            line-height: 2.5rem;
+            .little-title{
+                font-size: 2rem;
+                letter-spacing: 0;
+                vertical-align: text-top;
+            }
+            .paris{
+                font-size: 1.2rem;
+                font-weight: lighter;
+                padding: 1rem 0;
+            }
+        }
+        p{
+            max-width: 40rem;
+            margin: 0 auto;
+            margin-bottom: 1.25rem;
+            line-height: 1.3rem;
+        }
+    }
+    .btn-resa {
+        letter-spacing: .3rem;
+        color: $ten;
+        border: 2px solid $ten;
+        background-color: transparent;
+        padding: .7rem 1.3rem;
+        display: inline-block;
+        transition: all 0.3s linear;
+        &:hover {
+            cursor: pointer;
+            background-color: $ten;
+            color: $eight;
+        }
+    }
+}
+.banner::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+// main section ######################
+section{
+    padding-bottom: 5rem;
+    .title h2{
+        font-size: 2rem;
+        letter-spacing: .3rem;
+        text-align: center;
+        font-variant: small-caps;
+    }
+    #menu,
+    #about {
+        height: 80vh;
+    }
+    #about {
+        background-color: $ten;
+    }
+}
+// footer ############################@
 footer{
     background-color: $seven-b;
     margin-top: auto;

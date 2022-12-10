@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,12 +15,8 @@ body {
 
 main {
   min-height: 100vh;
-  background: url("https://source.unsplash.com/JqT2Wp5S0Dk") center/cover no-repeat;
-  background-position: 40%;
   display: flex;
   flex-direction: column;
-  position: relative;
-  isolation: isolate;
 }
 
 ul {
@@ -25,6 +25,13 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+header {
+  background: url("https://source.unsplash.com/JqT2Wp5S0Dk") center/cover no-repeat;
+  background-position: 40%;
+  position: relative;
+  isolation: isolate;
 }
 
 nav {
@@ -141,8 +148,25 @@ nav {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   z-index: -1;
+}
+
+section {
+  padding-bottom: 5rem;
+}
+section .title h2 {
+  font-size: 2rem;
+  letter-spacing: 0.3rem;
+  text-align: center;
+  font-variant: small-caps;
+}
+section #menu,
+section #about {
+  height: 80vh;
+}
+section #about {
+  background-color: #FEE6CB;
 }
 
 footer {
