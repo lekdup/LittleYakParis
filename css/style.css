@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #F9F0E8;
+  background-color: #F9F6EE;
 }
 
 main {
@@ -15,6 +15,8 @@ main {
   background-position: 40%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  isolation: isolate;
 }
 
 ul {
@@ -36,7 +38,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   color: #1F0906;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem;
 }
 
 .nav-toggle {
@@ -64,7 +66,7 @@ nav {
 }
 
 .logo {
-  height: 4rem;
+  height: 3rem;
 }
 
 .links a {
@@ -76,8 +78,8 @@ nav {
   transition: all 0.3s linear;
 }
 .links a:hover {
-  color: #773C54;
-  background: #e2cbcd;
+  color: #58382B;
+  background: #feebd5;
   padding-left: 1.5rem;
 }
 
@@ -97,6 +99,7 @@ nav {
   place-items: center;
   text-align: center;
   color: #FEE6CB;
+  padding: 0 0.5rem;
 }
 .banner .container h1 {
   font-size: 5rem;
@@ -125,12 +128,25 @@ nav {
   border: 2px solid #FEE6CB;
   background-color: transparent;
   padding: 0.7rem 1.3rem;
+  display: inline-block;
+  transition: all 0.3s linear;
 }
 .banner .btn-resa:hover {
   cursor: pointer;
+  background-color: #FEE6CB;
+  color: #58382B;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 footer {
+  background-color: #210E0D;
   margin-top: auto;
   display: flex;
   flex-direction: column;
@@ -167,7 +183,6 @@ footer {
 
 @media screen and (min-width: 800px) {
   nav {
-    margin-top: 1rem;
     background-color: transparent;
     box-shadow: none;
   }
