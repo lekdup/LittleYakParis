@@ -27,6 +27,10 @@ a {
   text-decoration: none;
 }
 
+.logo {
+  height: 2.8rem;
+}
+
 header {
   background: url("https://source.unsplash.com/JqT2Wp5S0Dk") center/cover no-repeat;
   background-position: 40%;
@@ -47,13 +51,7 @@ nav {
   color: #1F0906;
   padding: 0.5rem;
 }
-
-.fixed-nav {
-  position: fixed;
-  width: 100%;
-}
-
-.nav-toggle {
+.nav-header .nav-toggle {
   background: transparent;
   border: 3px solid #210E0D;
   border-radius: 0.3rem;
@@ -61,38 +59,25 @@ nav {
   width: 40px;
   cursor: pointer;
 }
-.nav-toggle .hamburger {
+.nav-header .nav-toggle .hamburger {
   transition: translate 1s, rotate 1s;
 }
-.nav-toggle .line {
+.nav-header .nav-toggle .line {
   stroke-dasharray: 60 31 60 400;
   transition: 1s;
 }
-.nav-toggle[aria-expanded=true] .line {
+.nav-header .nav-toggle[aria-expanded=true] .line {
   stroke-dasharray: 60 105 60 400;
   stroke-dashoffset: -90;
 }
-.nav-toggle[aria-expanded=true] .hamburger {
+.nav-header .nav-toggle[aria-expanded=true] .hamburger {
   translate: 2px -2px;
   rotate: 0.125turn;
 }
 
-.logo {
-  height: 3rem;
-}
-
-.links a {
-  color: #210E0D;
-  font-size: 1.1rem;
-  font-variant: small-caps;
-  display: block;
-  padding: 0.75rem 1rem;
-  transition: all 0.3s linear;
-}
-.links a:hover {
-  color: #58382B;
-  background: #feebd5;
-  padding-left: 1.5rem;
+.fixed-nav {
+  position: fixed;
+  width: 100%;
 }
 
 .links-container {
@@ -100,9 +85,22 @@ nav {
   overflow: hidden;
   transition: all 0.3s linear;
 }
+.links-container .links a {
+  color: #210E0D;
+  font-size: 1.1rem;
+  font-variant: small-caps;
+  display: block;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s linear;
+}
+.links-container .links a:hover {
+  color: #843B62;
+  background: #feebd5;
+  padding-left: 1.5rem;
+}
 
 .banner {
-  height: 100vh;
+  height: 65vh;
   display: grid;
   place-items: center;
   text-align: center;
@@ -259,10 +257,11 @@ footer {
     margin-left: 1rem;
   }
   .fixed-nav {
-    background-color: #F9F6EE;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s linear;
   }
-  .fixed-nav .links a {
-    color: #1F0906;
+  .fixed-nav .nav-center {
+    padding: 0.2rem 1rem;
   }
   .nav-toggle {
     display: none;
@@ -270,15 +269,15 @@ footer {
   .links-container {
     height: auto !important;
   }
-  .links {
+  .links-container .links {
     display: flex;
   }
-  .links a {
+  .links-container .links a {
     color: #FEE6CB;
     padding: 0;
     margin: 0 1rem;
   }
-  .links a:hover {
+  .links-container .links a:hover {
     background: transparent;
     color: #843B62;
     padding: 0;

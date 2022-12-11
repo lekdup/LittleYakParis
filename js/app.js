@@ -27,7 +27,7 @@ const topLink = document.querySelector('.top-link')
 window.addEventListener('scroll', ()=>{
     const scrollHeight = window.pageYOffset;
     const navHeight = navbar.getBoundingClientRect().height;
-    if (scrollHeight > navHeight){
+    if (scrollHeight > 0){
         navbar.classList.add('fixed-nav')
     } else {
         navbar.classList.remove('fixed-nav')
