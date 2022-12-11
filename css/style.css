@@ -282,6 +282,9 @@ footer {
     color: #843B62;
     padding: 0;
   }
+  .banner {
+    min-height: 100vh;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
