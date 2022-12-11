@@ -39,3 +39,33 @@ window.addEventListener('scroll', ()=>{
         topLink.classList.remove('show-link')
     }
 });
+
+// scroll link
+const scrollLink = document.querySelectorAll(".scroll-link")
+
+scrollLink.forEach(function(link){
+    link.addEventListener("click", (e)=>{
+        // prevent the default
+        e.preventDefault()
+        // navigate to specific spot
+        const id = e.currentTarget.getAttribute("href").slice(1);
+        const element = document.getElementById(id);
+        // calculate the height
+        const navHeight = navbar.getBoundingClientRect().height;
+        const containerHeight = linksContainer.getBoundingClientRect().height;
+        const fixedNav = navbar.classList.contains("fixed-nav")
+        let position = element.offsetTop - navHeight;
+        
+        if (!fixedNav){
+            position = position - navHeight
+        }
+        if(navHeight>82){
+            position = position +  containerHeight
+        }
+        window.scrollTo({
+            left:0,
+            top: position,
+        })
+        linksContainer.style.height = 0
+    })
+})
